@@ -1,15 +1,15 @@
 package com.whatsub.honeybread.core.domain.user;
 
 import com.whatsub.honeybread.core.domain.base.BaseEntity;
+import com.whatsub.honeybread.core.domain.recentaddress.RecentDeliveryAddress;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "member")
@@ -17,6 +17,10 @@ import javax.persistence.Table;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EqualsAndHashCode(callSuper = true)
 public class User extends BaseEntity{
+
+    @OneToMany(orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private List<RecentDeliveryAddress> recentDeliveryAddresses = List.of();
 
     @Column(nullable = false)
     private String email;
