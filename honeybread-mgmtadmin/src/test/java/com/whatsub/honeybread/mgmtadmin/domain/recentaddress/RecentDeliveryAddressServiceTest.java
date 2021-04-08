@@ -127,18 +127,6 @@ class RecentDeliveryAddressServiceTest {
     }
 
     @Test
-    void 주소_ID_검색() {
-        //given
-        주소_ID_검색_성공();
-
-        //when
-        repository.findById(anyLong());
-
-        //then
-        주소가_ID로_검색되어야함();
-    }
-
-    @Test
     void 주소_ID_검색시_없을경우_에러() {
         //given
         주소_ID_검색_실패();
