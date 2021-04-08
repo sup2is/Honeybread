@@ -2,10 +2,12 @@ package com.whatsub.honeybread.mgmtadmin.domain.recentaddress.dto;
 
 import com.sun.istack.NotNull;
 import com.whatsub.honeybread.core.domain.recentaddress.RecentDeliveryAddress;
+import io.swagger.annotations.ApiModel;
 import lombok.Value;
 
 import javax.validation.constraints.NotBlank;
 
+@ApiModel("최근배달주소 등록 요청")
 @Value
 public class RecentDeliveryAddressRequest {
 
